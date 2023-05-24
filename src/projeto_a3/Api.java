@@ -7,11 +7,6 @@ import java.net.http.*;
 import java.net.URI;
 import java.io.IOException;
 
-/*CloseableHttpClient cliente = HttpClientBuilder.create().build();
-HttpGet requisicao = new HttpGet("https://exemplo.com/api/recurso");
-CloseableHttpResponse resposta = cliente.execute(requisicao);
-String respostaJSON = EntityUtils.toString(resposta.getEntity());
- */
 public class Api{
 
         public void RequestData(String url){
@@ -23,7 +18,7 @@ public class Api{
     .build();
     try{
        HttpResponse<String> response =  client.send(request, HttpResponse.BodyHandlers.ofString());
-       System.out.println(response);
+       System.out.println(response.body());
     }catch(IOException e){
         System.out.println(e);
     }catch (InterruptedException e) {
@@ -31,5 +26,10 @@ public class Api{
     System.out.println("A operação foi interrompida: " + e.getMessage());
 }
     }
+        
+        public static void main(String args[]){
+            Api api = new Api();
+            api.RequestData("https://www.kaggle.com/datasets/amandalk/sp-air-quality");
+        }
      
 }

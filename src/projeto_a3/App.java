@@ -9,4 +9,8 @@ public class App extends JFrame{
         j.setSize(600,500);
         j.setVisible(true);
     }
+    
+    public static void main(String args[]){
+        
+    }
 }
