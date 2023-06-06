@@ -1,5 +1,5 @@
 
-package projeto_a3;
+package projetoa3;
 
 public class Pesquisador extends Usuario{
     
